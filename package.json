@@ -77,6 +77,7 @@
     "react-addons-test-utils": "^15.4.0",
     "react-chartjs": "git+https://github.com/jhudson8/react-chartjs#chartjs-v2",
     "react-dom": "^15.4.0",
+    "react-dotdotdot": "^1.1.0",
     "react-fastclick": "^3.0.1",
     "react-immutable-proptypes": "^1.7.1",
     "react-infinite": "~0.9.2",

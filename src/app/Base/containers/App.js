@@ -1,10 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchAppData } from '../actions/root'
-import injectTapEventPlugin from 'react-tap-event-plugin'
-
-injectTapEventPlugin()
+import { fetchAppData } from 'base/actions/root'
 
 class App extends Component {
   constructor(props) {

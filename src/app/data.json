@@ -1,7 +1,25 @@
 [{
-	"title": "title 1",
-	"description": "description 1"
+	"title": "What excites or interests you about coding?",
+	"detail": "What excites me about coding is that the challenges are boundless, and the solutions are constantly evolving with technology. When I was first starting out (in 2001), making a background image appear tiled in the browser was cool. Today, it’s importing an SVG into a JavaScript component, and having a dynamic reference to that file with Webpack.",
+	"date": "5/30/17"
 }, {
-	"title": "title 2",
-	"description": "description 2"
+	"title": "What does a doctype do?",
+	"detail": "It instructs the web browser about what version of the markup language the page is written in. DOCTYPEs are required for legacy reasons. When omitted, browsers tend to use a different rendering mode that is incompatible with some specifications. Including the DOCTYPE in a document ensures that the browser makes a best-effort attempt at following the relevant specifications.",
+	"date": "5/29/17"
+}, {
+	"title": "What is the difference between classes and ID's in CSS",
+	"detail": "A class selector is a name preceded by a full stop (“.”) and an ID selector is a name preceded by a hash character (“#”). The difference between an ID and a class is that an ID can be used to identify one element, whereas a class can be used to identify more than one.",
+	"date": "5/29/17"
+}, {
+	"title": "Explain event delegation",
+	"detail": "Event delegation refers to the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated. It allows us to attach a single event listener for elements that exist now or in the future.",
+	"date": "4/1/17"
+}, {
+	"title": "Explain how this works in JavaScript",
+	"detail": "`this` evaluates to the value of the ThisBinding of the current execution context. In typical object-oriented programming, we need a way of identifying and referring to the object that we’re currently working with. `this` serves the purpose admirably, providing our objects the ability to examine themselves, and point at their own properties. Bind creates a new function that will have this set to the first parameter passed to bind().",
+	"date": "3/15/18"
+}, {
+	"title": "Explain how prototypal inheritance works",
+	"detail": "Every function comes with a prototype object. When you create an “instance” of that function e.g. using a Constructor, you can add properties to that object.",
+	"date": "3/14/17"
 }]

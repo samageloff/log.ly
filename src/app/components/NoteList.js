@@ -2,32 +2,30 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router'
+import { fetchAppData } from 'base/actions/root'
+import style from 'app/styles/note-list.scss'
 
 class NoteList extends Component {
   constructor(props) {
     super(props)
   }
 
-  state = {
-    notes: []
+  static propTypes = {
+    actions: PropTypes.object.isRequired
   }
 
-  componentWillMount = () => {
-    let notes = JSON.parse(localStorage.getItem('notes'))
-    if (notes) {
-      this.setState({
-        notes: notes
-      }, () => {
-        console.log('notes have been retrieved')
-      })
-    }
+  componentWillMount() {
+    this.props.actions.fetchAppData()
   }
 
   getNoteList = () => {
-    return this.state.notes.map((note) => {
-      return <li>
-        <h3>{note.title}</h3>
-        <p>{note.description}</p>
+    return this.props.notes.map((note, index) => {
+      return <li key={index}>
+        <Link to={{ pathname: `/note/${index}` }}>
+          <date>{note.date}</date>
+          <h3>{note.title}</h3>
+          <p>{note.detail}</p>
+        </Link>
       </li>
     })
   }
@@ -43,12 +41,20 @@ class NoteList extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
+  const {
+    app
+  } = state
+
   return {
-    actions: bindActionCreators({
-      setSelected
-    }, dispatch)
+    notes: app.get('data')
   }
 }
 
-export default connect(null, mapDispatchToProps)(NoteList)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators({ fetchAppData }, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NoteList)
