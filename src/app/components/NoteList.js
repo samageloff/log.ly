@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router'
 import { fetchAppData } from 'base/actions/root'
+import Dotdotdot from 'react-dotdotdot'
 import style from 'app/styles/note-list.scss'
 
 class NoteList extends Component {
@@ -23,8 +24,12 @@ class NoteList extends Component {
       return <li key={index}>
         <Link to={{ pathname: `/note/${index}` }}>
           <date>{note.date}</date>
-          <h3>{note.title}</h3>
-          <p>{note.detail}</p>
+          <Dotdotdot clamp={1}>
+            <h3>{note.title}</h3>
+          </Dotdotdot>
+          <Dotdotdot clamp={2}>
+            <p>{note.detail}</p>
+          </Dotdotdot>
         </Link>
       </li>
     })
